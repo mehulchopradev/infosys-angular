@@ -18,20 +18,11 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCalculate() {
-    const { firstNo, secondNo, operation } = this;
-    
-    let ans!: number; // ! to ensure that typescript does not complain at line 34
-    switch(operation) {
-      case '+': ans = parseInt(firstNo) + parseInt(secondNo);
-        break;
-      case '-': ans = parseInt(firstNo) - parseInt(secondNo);
-        break;
-      case '*': ans = parseInt(firstNo) * parseInt(secondNo);
-        break;
-    }
-
-    this.ans = '' + ans;
+  onCalculate(data: any) {
+    const { firstNo, secondNo, operation, ans } = data;
+    this.firstNo = firstNo;
+    this.secondNo = secondNo;
+    this.operation = operation;
+    this.ans = ans;
   }
-
 }

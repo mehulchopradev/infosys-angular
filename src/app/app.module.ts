@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { CalcResultsComponent } from './calc-results/calc-results.component';
+import { CalcFormComponent } from './calc-form/calc-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
-    CalcResultsComponent
+    CalcResultsComponent,
+    CalcFormComponent
   ],
   imports: [
     BrowserModule,
