@@ -1,1 +1,28 @@
-<h2>Hello world!</h2>
+<h2>Name generator</h2>
+<div>
+  <!-- <input
+    type="text"
+    placeholder="First name"
+    #first
+    [value]="firstName"
+    (keyup)="onFirstNameChange(first.value)"> -->
+    <input
+      type="text"
+      placeholder="First name"
+      [(ngModel)]="firstName">
+</div>
+<div>
+  <!-- <input
+    type="text"
+    placeholder="Last name"
+    #last
+    [value]="lastName"
+    (keyup)="onLastNameChange(last.value)"> -->
+  <input
+    type="text"
+    placeholder="Last name"
+    [(ngModel)]="lastName">
+</div>
+<div>
+  Final name: {{ firstName }} {{ lastName }}
+</div>

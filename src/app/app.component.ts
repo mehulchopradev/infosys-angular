@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'utility-app';
+
+  // state
+  firstName: string = 'john';
+  lastName: string = 'doe';
+
+  /* onFirstNameChange(firstName: string): void {
+    this.firstName = firstName;
+  }
+
+  onLastNameChange(lastName: string): void {
+    this.lastName = lastName;
+  } */
 }
