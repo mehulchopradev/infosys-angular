@@ -28,10 +28,10 @@
       [value]="ans"
     >
   </div>
-  <div>
-    <p>The first number entered by you: {{ firstNo }}</p>
-    <p>The operation selected by you: {{ operation }}</p>
-    <p>The second number entered by you: {{ secondNo }}</p>
-    <p>The ans of the above operation: {{ ans }}</p>
-  </div>
+  <app-calc-results
+    [first]="firstNo"
+    [second]="secondNo"
+    [ops]="operation"
+    [ans]="ans"
+  ></app-calc-results>
 </div>
