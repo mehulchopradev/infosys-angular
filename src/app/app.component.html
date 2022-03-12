@@ -1,24 +1,24 @@
-<h2>Name generator</h2>
-<div>
+<!-- <h2>Name generator</h2>
+<div> -->
   <!-- <input
     type="text"
     placeholder="First name"
     #first
     [value]="firstName"
     (keyup)="onFirstNameChange(first.value)"> -->
-    <input
+    <!-- <input
       type="text"
       placeholder="First name"
       [(ngModel)]="firstName">
 </div>
-<div>
+<div> -->
   <!-- <input
     type="text"
     placeholder="Last name"
     #last
     [value]="lastName"
     (keyup)="onLastNameChange(last.value)"> -->
-  <input
+  <!-- <input
     type="text"
     placeholder="Last name"
     [(ngModel)]="lastName">
@@ -27,4 +27,20 @@
   Final name: {{ firstName }} {{ lastName }}
 </div>
 
-<app-calculator></app-calculator>
+<app-calculator></app-calculator> -->
+
+
+<div>
+  <div class="header">
+    <h2>Welcome to my utility app</h2>
+    <div class="nav">
+      <a routerLink="calc">Calculator</a> | <a routerLink="todos">Task Management</a>
+    </div>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer">
+    Copyright 2022. All rights reserved
+  </div>
+</div>
