@@ -11,6 +11,7 @@ import { TodosComponent } from './todos/todos.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TitlePipe } from './title.pipe';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { TodosAppService } from './todos-app.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    TodosAppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

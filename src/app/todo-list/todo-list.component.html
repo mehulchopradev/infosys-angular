@@ -1,10 +1,10 @@
 <div>
   <div class="todo-list">
-    <div class="row" *ngFor="let todo of todos">
+    <div class="row" *ngFor="let todo of service.getTodos()">
       <input type="checkbox" [(ngModel)]="todo.done"><span>{{ todo.title | title }}<i>({{ todo.createdDate | date:'dd/MM/yyyy' }})</i></span>
     </div>
   </div>
   <div>
-    <button *ngIf="todos.length">Finish completed todos</button>
+    <button *ngIf="service.getTodos().length">Finish completed todos</button>
   </div>
 </div>
