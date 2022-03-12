@@ -3,9 +3,9 @@ import { Todo } from '../types/todo';
 import moment from 'moment';
 
 const TODOS: Todo[] = [
-  { id: 1, title: 'Going for trecking', done: false, createdDate: moment().subtract(3, 'd').toDate()},
-  { id: 2, title: 'Gym', done: false, createdDate: moment().subtract(1, 'd').toDate() },
-  { id: 3, title: 'Program', done: false, createdDate: moment().toDate()},
+  /* { id: 1, title: 'GOING TO TRECKING', done: false, createdDate: moment().subtract(3, 'd').toDate()},
+  { id: 2, title: 'gym', done: false, createdDate: moment().subtract(1, 'd').toDate() },
+  { id: 3, title: 'pRogram', done: false, createdDate: moment().toDate()}, */
 ]
 
 @Component({

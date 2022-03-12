@@ -9,6 +9,7 @@ import { CalcResultsComponent } from './calc-results/calc-results.component';
 import { CalcFormComponent } from './calc-form/calc-form.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TitlePipe } from './title.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     CalcResultsComponent,
     CalcFormComponent,
     TodosComponent,
-    TodoListComponent
+    TodoListComponent,
+    TitlePipe
   ],
   imports: [
     BrowserModule,
