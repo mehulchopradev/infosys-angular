@@ -8,6 +8,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { CalcResultsComponent } from './calc-results/calc-results.component';
 import { CalcFormComponent } from './calc-form/calc-form.component';
 import { TodosComponent } from './todos/todos.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TodosComponent } from './todos/todos.component';
     CalculatorComponent,
     CalcResultsComponent,
     CalcFormComponent,
-    TodosComponent
+    TodosComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,

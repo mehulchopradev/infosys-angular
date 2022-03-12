@@ -1,0 +1,10 @@
+<div>
+  <div class="todo-list">
+    <div class="row" *ngFor="let todo of todos">
+      <input type="checkbox"><span>{{ todo.title }}<i>({{ todo.createdDate | date:'dd/MM/yyyy' }})</i></span>
+    </div>
+  </div>
+  <div>
+    <button>Finish completed todos</button>
+  </div>
+</div>
