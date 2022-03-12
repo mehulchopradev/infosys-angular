@@ -1,7 +1,7 @@
 <div>
   <div class="todo-list">
     <div class="row" *ngFor="let todo of todos">
-      <input type="checkbox"><span>{{ todo.title | title }}<i>({{ todo.createdDate | date:'dd/MM/yyyy' }})</i></span>
+      <input type="checkbox" [(ngModel)]="todo.done"><span>{{ todo.title | title }}<i>({{ todo.createdDate | date:'dd/MM/yyyy' }})</i></span>
     </div>
   </div>
   <div>
