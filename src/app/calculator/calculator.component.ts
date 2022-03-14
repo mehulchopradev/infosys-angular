@@ -16,9 +16,43 @@ export class CalculatorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //  called only once
+    // ??? ajax call for the data to project backend
+    const url: string = 'https://my-json-server.typicode.com/mehulchopradev/calc-service/defaultCalcData';
+
+    fetch(url)
+      .then((response: Response) => {
+        if (response.ok) {
+          return response.json();
+        }
+
+        throw new Error('Error in fetching default calc data');
+      })
+      .then((data: any) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('Unable to fetch the calc data right now!');
+      });
+    
+    /* const promise: Promise<any> = fetch(url); // asynchronous call (network IO)
+    promise.then((response: Response) => {
+      // server responded back with a Response
+      const jsonPromise: Promise<any> = response.json(); // asynchronous call (network IO)
+      jsonPromise.then((data: any) => {
+        console.log(data);
+      });
+      console.log('good evening'); // synchronous
+      console.log('good night'); // synchronous
+    });
+  
+    console.log('hello'); // synchronous
+    console.log('good morning'); // synchronous */
   }
 
   onCalculate(data: any) {
+    // synchronous code
     const { firstNo, secondNo, operation, ans } = data;
     this.firstNo = firstNo;
     this.secondNo = secondNo;
