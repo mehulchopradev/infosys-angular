@@ -17,6 +17,7 @@ export class TodoFormComponent implements OnInit {
 
   onSave(): void {
     this.service.addTodo(this.newTodo);
+    this.newTodo = '';
   }
 
 }

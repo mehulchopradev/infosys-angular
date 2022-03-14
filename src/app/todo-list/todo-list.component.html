@@ -5,6 +5,15 @@
     </div>
   </div>
   <div>
-    <button *ngIf="service.getTodos().length">Finish completed todos</button>
+    <button
+      *ngIf="service.getTodos().length"
+      [disabled]="!completedTodos.length"
+      (click)="onClearCompletedTodos()">
+      Finish completed todos
+    </button>
+    <span
+      *ngIf="service.getTodos().length">
+      ({{ completedTodos.length }})
+    </span>
   </div>
 </div>
