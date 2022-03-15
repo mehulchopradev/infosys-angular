@@ -10,6 +10,7 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodosAppService } from './todos-app.service';
 import { CommonUtilitiesModule } from './common-utilities/common-utilities.module';
 import { CalcModule } from './calc/calc.module';
+import { LibMgmtModule } from './lib-mgmt/lib-mgmt.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CalcModule } from './calc/calc.module';
     AppRoutingModule,
     FormsModule,
     CommonUtilitiesModule,
-    CalcModule
+    CalcModule,
+    LibMgmtModule
   ],
   providers: [
     TodosAppService
