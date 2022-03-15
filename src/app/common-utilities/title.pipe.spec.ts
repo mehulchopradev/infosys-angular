@@ -1,7 +1,6 @@
 import { TitlePipe } from './title.pipe';
 
 describe('TitlePipe', () => {
-
   let pipe: TitlePipe;
   beforeEach(() => {
     pipe = new TitlePipe();

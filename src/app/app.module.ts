@@ -9,9 +9,9 @@ import { CalcResultsComponent } from './calc-results/calc-results.component';
 import { CalcFormComponent } from './calc-form/calc-form.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { TitlePipe } from './title.pipe';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodosAppService } from './todos-app.service';
+import { CommonUtilitiesModule } from './common-utilities/common-utilities.module';
 
 @NgModule({
   declarations: [
@@ -21,13 +21,13 @@ import { TodosAppService } from './todos-app.service';
     CalcFormComponent,
     TodosComponent,
     TodoListComponent,
-    TitlePipe,
     TodoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    CommonUtilitiesModule
   ],
   providers: [
     TodosAppService
