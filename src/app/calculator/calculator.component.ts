@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalcData } from '../types/calc_data';
 
 @Component({
   selector: 'app-calculator',
@@ -12,14 +13,41 @@ export class CalculatorComponent implements OnInit {
   secondNo: string = '';
   operation: string = '';
   ans: string = '';
+  defaultData: CalcData | null = null;
 
   constructor() { }
 
-  ngOnInit(): void {
+
+  // async - await (asynchronous code in a synchronous fashion)
+  async ngOnInit() {
+      // asynchronous code
+      // synchronous fashion
+      console.log('ngOnInit calculator comp');
+
+      try {
+        const url: string = 'https://my-json-server.typicode.com/mehulchopradev/calc-service/defaultCalcData';
+        const response: Response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Error in connecting with the server. Please try again later');
+        }
+
+        const data: CalcData = await response.json();
+        this.defaultData = data;
+        console.log('calculator comp', this.defaultData);
+      } catch (err) {
+        console.log(err);
+        alert('Unable to fetch the calc data right now!');
+      }
+  }
+
+  /* ngOnInit(): void {
+    // synchronous code
+
     //  called only once
     // ??? ajax call for the data to project backend
     const url: string = 'https://my-json-server.typicode.com/mehulchopradev/calc-service/defaultCalcData';
 
+    // asynchronous (network IO) XHR (Ajax)
     fetch(url)
       .then((response: Response) => {
         if (response.ok) {
@@ -35,6 +63,10 @@ export class CalculatorComponent implements OnInit {
         console.log(err);
         alert('Unable to fetch the calc data right now!');
       });
+
+    // synchronous code
+    // console.log('hello'); // synchronous
+    // console.log('good morning'); // synchronous
     
     /* const promise: Promise<any> = fetch(url); // asynchronous call (network IO)
     promise.then((response: Response) => {
@@ -49,7 +81,7 @@ export class CalculatorComponent implements OnInit {
   
     console.log('hello'); // synchronous
     console.log('good morning'); // synchronous */
-  }
+  /*} */
 
   onCalculate(data: any) {
     // synchronous code

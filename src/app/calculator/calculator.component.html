@@ -1,6 +1,7 @@
 <div>
   <h2>Calculator app</h2>
   <app-calc-form
+    [defaultData]="defaultData"
     (calc)="onCalculate($event)"></app-calc-form>
   <app-calc-results
     [first]="firstNo"
