@@ -5,7 +5,8 @@ import { LibraryComponent } from './library/library.component';
 import { BooksComponent } from './library/books/books.component';
 import { BookDetailsComponent } from './library/book-details/book-details.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookFormComponent } from './book-form/book-form.component';
 
 
 
@@ -13,13 +14,15 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     LibraryComponent,
     BooksComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    BookFormComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     LibraryComponent,

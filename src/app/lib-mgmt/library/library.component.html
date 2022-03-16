@@ -1,6 +1,6 @@
 <h2>Library Management Application</h2>
 <button (click)="onClick()">Add a book</button>
-<div *ngIf="isFormVisible">
+<!-- <div *ngIf="isFormVisible">
   <p>
     <input type="text" placeholder="Title" [(ngModel)]="newBook.title">
   </p>
@@ -17,5 +17,6 @@
   <div class="success" *ngIf="isSuccess">
     Book save success!
   </div>
-</div>
+</div> -->
+<app-book-form></app-book-form>
 <router-outlet></router-outlet>
