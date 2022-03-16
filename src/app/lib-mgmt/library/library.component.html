@@ -1,2 +1,21 @@
 <h2>Library Management Application</h2>
+<button (click)="onClick()">Add a book</button>
+<div *ngIf="isFormVisible">
+  <p>
+    <input type="text" placeholder="Title" [(ngModel)]="newBook.title">
+  </p>
+  <p>
+    <input type="number" placeholder="Price" [(ngModel)]="newBook.price">
+  </p>
+  <p>
+    <input type="number" placeholder="Pages" [(ngModel)]="newBook.pages">
+  </p>
+  <p>
+    <button (click)="onSave()">Save</button>
+    <button (click)="onClick()">Cancel</button>
+  </p>
+  <div class="success" *ngIf="isSuccess">
+    Book save success!
+  </div>
+</div>
 <router-outlet></router-outlet>
