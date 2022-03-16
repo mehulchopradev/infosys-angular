@@ -1,13 +1,9 @@
-<div>
-  <h3>Programming in python</h3>
+<div *ngIf="book">
+  <h3>{{ book.title }}</h3>
   <p>
-    <i>Price: 900</i>
+    <i>Price: {{ book.price }}</i>
   </p>
   <p>
-    <i>Pages: 1000</i>
-  </p>
-  <h3>Publication house details</h3>
-  <p>
-    <i>Name: Mehul LLP</i>
+    <i>Pages: {{ book.pages }}</i>
   </p>
 </div>
