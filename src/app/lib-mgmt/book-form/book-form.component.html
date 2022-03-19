@@ -37,5 +37,8 @@
       <button (click)="onSave()" [disabled]="bookFormGroup.invalid">Save</button>
       <button (click)="onReset()">Reset</button>
     </p>
+    <div class="success" *ngIf="isSuccess">
+      Book save success!
+    </div>
   </form>
 </div>

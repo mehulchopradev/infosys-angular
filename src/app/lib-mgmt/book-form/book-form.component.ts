@@ -1,5 +1,8 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { catchError, throwError } from 'rxjs';
+import { Book } from '../types/book';
 import { titleValidator } from '../utils/title-validator';
 
 @Component({
@@ -11,7 +14,9 @@ export class BookFormComponent implements OnInit {
 
   bookFormGroup!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  isSuccess: boolean = false;
+
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
     // build a form group
@@ -24,9 +29,25 @@ export class BookFormComponent implements OnInit {
   }
 
   onSave(): void {
+    this.isSuccess = false;
     const data = this.bookFormGroup.value;
-    // console.log(data);
-    // TODO: POST api call to create a new book
+
+    const url = 'http://localhost:3002/books';
+    this.http.post<Book>(url, data, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .pipe(
+      catchError((err: HttpErrorResponse, caught) => {
+        console.log(err);
+        return throwError(() => new Error('Unable to post data to the server'))
+      })
+    )
+    .subscribe((data: Book) => {
+      this.isSuccess = true;
+      this.bookFormGroup.reset();
+    });
   }
 
   onReset(): void {
