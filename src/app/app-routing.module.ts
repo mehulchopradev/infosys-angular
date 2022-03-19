@@ -5,6 +5,7 @@ import { BookDetailsComponent } from './lib-mgmt/library/book-details/book-detai
 import { BooksComponent } from './lib-mgmt/library/books/books.component';
 import { LibraryComponent } from './lib-mgmt/library/library.component';
 import { TodosComponent } from './todos/todos.component';
+import { UsersComponent } from './user-mgmt/users/users.component';
 
 const routes: Routes = [
   { path: 'calc', component: CalculatorComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'library', component: LibraryComponent, children: [
     { path: 'books', component: BooksComponent },
     { path: 'book-details/:bookId', component: BookDetailsComponent }
-  ]}
+  ]},
+  { path: 'users', component: UsersComponent }
 ];
 
 @NgModule({

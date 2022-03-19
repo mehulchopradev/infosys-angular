@@ -11,6 +11,7 @@ import { TodosAppService } from './todos-app.service';
 import { CommonUtilitiesModule } from './common-utilities/common-utilities.module';
 import { CalcModule } from './calc/calc.module';
 import { LibMgmtModule } from './lib-mgmt/lib-mgmt.module';
+import { UserMgmtModule } from './user-mgmt/user-mgmt.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LibMgmtModule } from './lib-mgmt/lib-mgmt.module';
     FormsModule,
     CommonUtilitiesModule,
     CalcModule,
-    LibMgmtModule
+    LibMgmtModule,
+    UserMgmtModule
   ],
   providers: [
     TodosAppService

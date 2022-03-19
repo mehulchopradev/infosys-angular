@@ -1,0 +1,33 @@
+<h2>User Management Application</h2>
+<form [formGroup]="userFormGroup">
+  <div>
+    <input type="text" placeholder="Enter username" formControlName="username">
+  </div>
+  <div>
+    <input type="password" placeholder="Enter password" formControlName="password">
+  </div>
+  <div formGroupName="address">
+    <h3>Address details</h3>
+    <div>
+      <select formControlName="country">
+        <option value="IN">India</option>
+        <option value="AU">Australia</option>
+      </select>
+    </div>
+    <div>
+      <input type="text" placeholder="Enter state" formControlName="state">
+    </div>
+    <div>
+      <input type="number" placeholder="Enter postal code" formControlName="postalCode">
+    </div>
+  </div>
+  <div formArrayName="contactNos">
+    <h3 style="display: inline-block;">Contact Nos</h3><button (click)="onAdd()">Add</button>
+    <div *ngFor="let contactNoControl of contactNos.controls; let i = index">
+      <input type="text" placeholder="Enter number" [formControlName]="i"><button (click)="onDelete(i)">Delete</button>
+    </div>
+  </div>
+  <div>
+    <button (click)="onSave()">Submit</button>
+  </div>
+</form>
