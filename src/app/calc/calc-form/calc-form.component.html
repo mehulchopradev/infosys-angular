@@ -3,9 +3,10 @@
     <input
       type="text"
       placeholder="Enter 1st No"
+      class="firstNo"
       [(ngModel)]="firstNo"
     >
-    <select [(ngModel)]="operation">
+    <select [(ngModel)]="operation" class="operation">
       <option value="+">+</option>
       <option value="-">-</option>
       <option value="*">*</option>
@@ -13,17 +14,19 @@
     <input
       type="text"
       placeholder="Enter 2nd No"
+      class="secondNo"
       [(ngModel)]="secondNo"
     >
   </div>
   <div>
-    <button (click)="onCalculate()">Calculate</button>
+    <button (click)="onCalculate()" class="calculate">Calculate</button>
   </div>
   <div>
     <input
       type="text"
       placeholder="The Ans"
       readonly
+      class="ans"
       [value]="ans"
     >
   </div>
