@@ -3,15 +3,39 @@
     <p>
       <input type="text" placeholder="Enter title" formControlName="title">
     </p>
+    <!-- {{ title?.errors | json }} -->
+    <div *ngIf="!title?.valid && (title?.dirty || title?.touched)">
+      <div class="error" *ngIf="title?.errors?.['required']">
+        book title is needed
+      </div>
+      <div class="error" *ngIf="title?.errors?.['maxlength']">
+        book title must not be more than 10
+      </div>
+      <div class="error" *ngIf="title?.errors?.['invalidTitle']">
+        book title cannot have reserved words
+      </div>
+    </div>
     <p>
       <input type="number" placeholder="Enter price" formControlName="price">
     </p>
     <p>
       <input type="number" placeholder="Enter pages" formControlName="pages">
     </p>
+    <!-- {{ pages?.errors | json }} -->
+    <div *ngIf="!pages?.valid && (pages?.dirty || pages?.touched)">
+      <div class="error" *ngIf="pages?.errors?.['required']">
+        book pages is needed
+      </div>
+      <div class="error" *ngIf="pages?.errors?.['min']">
+        book pages must be 1 or more than 1
+      </div>
+    </div>
+    <!-- <p>
+      {{ bookFormGroup.status }}
+    </p> -->
     <p>
-      <button>Save</button>
-      <button>Cancel</button>
+      <button (click)="onSave()" [disabled]="bookFormGroup.invalid">Save</button>
+      <button (click)="onReset()">Reset</button>
     </p>
   </form>
 </div>
