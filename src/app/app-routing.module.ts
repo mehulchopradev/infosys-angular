@@ -14,7 +14,8 @@ const routes: Routes = [
     { path: 'books', component: BooksComponent },
     { path: 'book-details/:bookId', component: BookDetailsComponent }
   ]},
-  { path: 'users', component: UsersComponent }
+  { path: 'users', component: UsersComponent },
+  { path: '', redirectTo: '/calc', pathMatch: 'full' }
 ];
 
 @NgModule({
