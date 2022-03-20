@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalculatorService } from '../calculator.service';
 import { CalcData } from '../types/calc_data';
 
 @Component({
@@ -15,7 +16,7 @@ export class CalculatorComponent implements OnInit {
   ans: string = '';
   defaultData: CalcData | null = null;
 
-  constructor() { }
+  constructor(private calculatorService: CalculatorService) { }
 
 
   // async - await (asynchronous code in a synchronous fashion)
@@ -25,13 +26,7 @@ export class CalculatorComponent implements OnInit {
       console.log('ngOnInit calculator comp');
 
       try {
-        const url: string = 'https://my-json-server.typicode.com/mehulchopradev/calc-service/defaultCalcData';
-        const response: Response = await fetch(url);
-        if (!response.ok) {
-          throw new Error('Error in connecting with the server. Please try again later');
-        }
-
-        const data: CalcData = await response.json();
+        const data = await this.calculatorService.fetchDefaultCalcData();
         this.defaultData = data;
         console.log('calculator comp', this.defaultData);
       } catch (err) {
